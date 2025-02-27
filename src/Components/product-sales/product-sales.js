@@ -15,7 +15,7 @@ const columns = [
     dataIndex: 'price', 
     key: 'price',
     sorter: (a, b) => parseFloat(a.price) - parseFloat(b.price),
-    render: (text) => `$${text}.99`,
+    render: (text) => `{text}`,
   },
 ];
 

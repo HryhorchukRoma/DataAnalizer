@@ -15,7 +15,7 @@ const columns = [
     dataIndex: 'price', 
     key: 'price',
     sorter: (a, b) => parseFloat(a.price) - parseFloat(b.price),
-    render: (text) => `${text}`,
+    render: (text) => `$${text-1}.99`,
   },
 ];
 
@@ -29,7 +29,7 @@ export default class ProductSalesTable extends Component {
     const formattedData = data.map(item => ({
       id: item.id,        
       name: item.name,   
-      price: `$${item.price-1}.99`,  
+      price: item.price,  
     }));
     this.setState({ productsData: formattedData });
   }
